@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,10 +41,21 @@ public class SpawnManager : MonoBehaviour
        obstacles.Add(obstacle);
 
     }
-    // Update is called once per frame
-    void Update()
+    
+    public void DestroyObstacles()
     {
+       
+        for (int i = 0; i < obstacles.Count; i++)
+        {
+            if (obstacles[i] != null)
+            {
+                Destroy(obstacles[i].gameObject);
+            }
+            
+        }
+        obstacles.Clear();
         
+
     }
 
 }
